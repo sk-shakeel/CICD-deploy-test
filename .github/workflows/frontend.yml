@@ -1,4 +1,5 @@
 name: Frontend CICD
+
 on:
   push:
     branches:
@@ -46,9 +47,19 @@ jobs:
         run: |
           echo "${{ secrets.PAT_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
 
-      - name: Build the backend image and push it to ACR
+      - name: Build the frontend image and push it to GHCR
         uses: docker/build-push-action@v2
         with:
           push: true
           tags: ghcr.io/${{ github.repository_owner }}/ramp-frontend:latest
           context: frontend
+
+      - name: Deploy to AWS instance
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.AWS_INSTANCE_IP }}
+          username: ${{ secrets.AWS_INSTANCE_USERNAME }}
+          key: ${{ secrets.AWS_INSTANCE_PRIVATE_KEY }}
+          script: |
+            docker pull ghcr.io/${{ github.repository_owner }}/ramp-frontend:latest
+            docker run -d -p 8080:8080 ghcr.io/${{ github.repository_owner }}/ramp-frontend:latest
