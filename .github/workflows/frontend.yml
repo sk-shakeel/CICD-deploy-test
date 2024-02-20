@@ -63,3 +63,6 @@ jobs:
           script: |
             docker pull ghcr.io/${{ github.repository_owner }}/ramp-frontend:latest
             docker run -d -p 8080:8080 ghcr.io/${{ github.repository_owner }}/ramp-frontend:latest
+
+      - name: Debug Private Key
+        run: echo "${{ secrets.AWS_INSTANCE_PRIVATE_KEY }}"
