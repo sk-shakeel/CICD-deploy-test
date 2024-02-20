@@ -16,7 +16,6 @@ permissions:
 jobs:
   frontend-deploy:
     name: Frontend Deployment
-    timeout-minutes: 8
     runs-on: ubuntu-latest
     defaults:
       run:
