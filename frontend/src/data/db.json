@@ -1,0 +1,323 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "meta": {
+        "brand": "H&M",
+        "name": "casio"
+      },
+      "amount": 42000,
+      "date": "Apr 14, 2004",
+      "user": {
+        "name": "Hellena John",
+        "virtualId": "Virtual 7007"
+      },
+      "reciept": "#200257",
+      "memo": "21-00006",
+      "sync": "Make ready"
+    },
+    {
+      "id": 2,
+      "meta": {
+        "brand": "Lyft",
+        "name": "arscris"
+      },
+      "amount": 42000,
+      "date": "Sep 10, 2010",
+      "user": {
+        "name": "Afolabi David",
+        "virtualId": "Virtual 7007"
+      },
+      "reciept": "#526534",
+      "memo": "21-00004",
+      "sync": "Make ready"
+    },
+    {
+      "id": 3,
+      "meta": {
+        "brand": "Lyft",
+        "name": "deniel_we"
+      },
+      "amount": 37000,
+      "date": "Aug 28, 2004",
+      "user": {
+        "name": "David Oshodi",
+        "virtualId": "Virtual 7007"
+      },
+      "reciept": "#526520",
+      "memo": "21-00010",
+      "sync": "Make ready"
+    },
+    {
+      "id": 4,
+      "meta": {
+        "brand": "Bershka",
+        "name": "shop123"
+      },
+      "amount": 21000,
+      "date": "Aug 07, 2019",
+      "user": {
+        "name": "Adekunle Fisayo",
+        "virtualId": "Virtual 7007"
+      },
+      "reciept": "#526589",
+      "memo": "21-00005",
+      "sync": "Make ready"
+    },
+    {
+      "id": 5,
+      "meta": {
+        "brand": "Lyft",
+        "name": "demode"
+      },
+      "amount": 17000,
+      "date": "May 16, 2005",
+      "user": {
+        "name": "Mbah Jacob",
+        "virtualId": "Virtual 7007"
+      },
+      "reciept": "#526587",
+      "memo": "21-00007",
+      "sync": "Make ready"
+    },
+    {
+      "id": 6,
+      "meta": {
+        "brand": "American Eagle",
+        "name": "shopsieu"
+      },
+      "amount": 12000,
+      "date": "Aug 27, 2019",
+      "user": {
+        "name": "James Friday",
+        "virtualId": "Virtual 7007"
+      },
+      "reciept": "#105986",
+      "memo": "20-00400",
+      "sync": "Make ready"
+    },
+    {
+      "id": 7,
+      "merchantName": "Capone",
+      "meta": {
+        "brand": "Cooper Stop",
+        "name": "shoplin"
+      },
+      "amount": 15000,
+      "date": "Aug 27, 2019",
+      "user": {
+        "name": "John Snow",
+        "virtualId": "Virtual 7007"
+      },
+      "reciept": "#105086",
+      "memo": "20-01400",
+      "sync": "Make ready"
+    }
+  ],
+  "payments": [
+    {
+      "id": 1,
+      "vendor": {
+        "name": "Gold Mining",
+        "amount": 2864.5
+      },
+      "paymentStatus": {
+        "payment": "ACH",
+        "status": "Scheduled"
+      },
+      "paymentDate": "2020-01-17",
+      "dueDate": "2020-02-04",
+      "invoiceDate": "2020-04-07"
+    },
+    {
+      "id": 2,
+      "vendor": {
+        "name": "Span",
+        "amount": 6.51
+      },
+      "paymentStatus": {
+        "payment": "ACH",
+        "status": "Scheduled"
+      },
+      "paymentDate": "2020-02-04",
+      "dueDate": "2020-02-23",
+      "invoiceDate": "2020-01-06"
+    },
+    {
+      "id": 3,
+      "vendor": {
+        "name": "Tampflex",
+        "amount": 5.84
+      },
+      "paymentStatus": {
+        "payment": "ACH",
+        "status": "Scheduled"
+      },
+      "paymentDate": "2020-02-23",
+      "dueDate": "2020-01-17",
+      "invoiceDate": "2020-01-26"
+    },
+    {
+      "id": 4,
+      "vendor": {
+        "name": "Trippledex",
+        "amount": 2.29
+      },
+      "paymentStatus": {
+        "payment": "ACH",
+        "status": "Scheduled"
+      },
+      "paymentDate": "2020-02-13",
+      "dueDate": "2020-02-08",
+      "invoiceDate": "2020-03-25"
+    },
+    {
+      "id": 5,
+      "vendor": {
+        "name": "Voyatouch",
+        "amount": 7.77
+      },
+      "paymentStatus": {
+        "payment": "ACH",
+        "status": "Scheduled"
+      },
+      "paymentDate": "2020-03-10",
+      "dueDate": "2020-02-13",
+      "invoiceDate": "2020-03-19"
+    },
+    {
+      "id": 6,
+      "vendor": {
+        "name": "Tampflex",
+        "amount": 2.71
+      },
+      "paymentStatus": {
+        "payment": "ACH",
+        "status": "Scheduled"
+      },
+      "paymentDate": "2020-02-08",
+      "dueDate": "2020-03-10",
+      "invoiceDate": "2020-02-09"
+    },
+    {
+      "vendor": {
+        "name": "Gold Mining",
+        "amount": 1500
+      },
+      "paymentStatus": {
+        "payment": "ACH",
+        "status": "Scheduled"
+      },
+      "paymentDate": "2023-09-08T09:03:23.811Z",
+      "dueDate": "2023-05-10T18:30:00.000Z",
+      "invoiceDate": "2023-01-10T18:30:00.000Z",
+      "vendorContact": "shaik@gmail.com",
+      "invoiceNumber": "2739162",
+      "quickBooksLocation": "india",
+      "paymentType": "ACH (Direct deposit)",
+      "fromAccNo": 8437,
+      "toAccNo": 77252,
+      "sendDate": "2023-09-08T09:03:23.811Z",
+      "recieveDate": "2023-09-08T09:03:23.811Z",
+      "id": 7
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Ramp",
+      "types": [
+        {
+          "id": 1,
+          "name": "Airlines"
+        },
+        {
+          "id": 2,
+          "name": "Fuel & gas"
+        },
+        {
+          "id": 3,
+          "name": "Saas / Software"
+        },
+        {
+          "id": 4,
+          "name": "Advertising"
+        },
+        {
+          "id": 5,
+          "name": "Shipping"
+        },
+        {
+          "id": 6,
+          "name": "other"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Quickbooks",
+      "types": [
+        {
+          "id": 101,
+          "name": "Travel"
+        },
+        {
+          "id": 102,
+          "name": "Auto Mobile:Fuel"
+        },
+        {
+          "id": 103,
+          "name": "Dues & Descriptions"
+        },
+        {
+          "id": 104,
+          "name": "Advertising"
+        },
+        {
+          "id": 105,
+          "name": "Expense"
+        },
+        {
+          "id": 106,
+          "name": "Travel Meals"
+        },
+        {
+          "id": 107,
+          "name": "Hotels"
+        },
+        {
+          "id": 108,
+          "name": "Disposals"
+        },
+        {
+          "id": 109,
+          "name": "Bank charges"
+        }
+      ]
+    }
+  ],
+  "merchantRules": [
+    {
+      "id": 1,
+      "merchantName": "Lyft",
+      "quickBooksCategoryId": 101
+    }
+  ],
+  "categoryRules": [
+    {
+      "id": 1,
+      "rampCategoryId": 1,
+      "quickBooksCategoryId": 101
+    },
+    {
+      "id": 2,
+      "rampCategoryId": 2,
+      "quickBooksCategoryId": 102
+    },
+    {
+      "id": 3,
+      "rampCategoryId": 3,
+      "quickBooksCategoryId": 103
+    }
+  ]
+}

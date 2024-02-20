@@ -1,0 +1,50 @@
+name: Frontend CICD
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "frontend/**"
+      - ".github/workflows/frontend.yml"
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  packages: write
+
+jobs:
+  frontend-deploy:
+    name: Frontend Deployment
+    timeout-minutes: 8
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: frontend/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}-
+
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm install
+
+      - name: Build and Push Docker Image
+        run: |
+          DOCKER_TAG=$(echo "${{ github.event_name }}_${{ github.run_number }}")
+          docker build -t ghcr.io/${{ github.repository_owner }}/ramp-frontend:${DOCKER_TAG} .
+          echo "${{ secrets.PAT_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
+          docker push ghcr.io/${{ github.repository_owner }}/ramp-frontend:v${DOCKER_TAG}

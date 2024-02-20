@@ -1,0 +1,35 @@
+version: "3"
+services:
+  database:
+    image: mysql
+    container_name: mysql-ramp-container
+    environment:
+      MYSQL_ROOT_PASSWORD: Root@123
+      MYSQL_DATABASE: ramp
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  service-registry:
+    image: "ramp-service-registry:v1"
+    build: ./backend/service-registry/.
+    network_mode: host
+
+  api-gateway:
+    image: "ramp-api-gateway:v1"
+    build: ./backend/api-gateway/.
+    network_mode: host
+
+  ramp:
+    image: "ramp-backend:v1"
+    build: ./backend/ramp/.
+    network_mode: host
+
+  frontend:
+    image: "ramp:v1"
+    build: ./frontend/.
+    network_mode: host
+
+volumes:
+  mysql-data:

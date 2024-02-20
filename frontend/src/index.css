@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Segoe UI';
+  src:
+    local('Segoe UI'),
+    url(' ./../public/assets/fonts/Segoe-UI.ttf') format('opentype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar {
+  display: none;
+}
