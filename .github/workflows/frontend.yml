@@ -14,8 +14,8 @@ permissions:
   packages: write
 
 jobs:
-  frontend-deploy:
-    name: Frontend Deployment
+  frontend-CI:
+    name: Frontend CI
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -53,6 +53,17 @@ jobs:
           tags: ghcr.io/${{ github.repository_owner }}/ramp-frontend:latest
           context: frontend
 
+  frontend-CD:
+    name: Frontend CI
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
       - name: Deploy to AWS instance
         uses: appleboy/ssh-action@master
         with:
@@ -62,6 +73,3 @@ jobs:
           script: |
             docker pull ghcr.io/${{ github.repository_owner }}/ramp-frontend:latest
             docker run -d -p 8080:8080 ghcr.io/${{ github.repository_owner }}/ramp-frontend:latest
-
-      - name: Debug Private Key
-        run: echo "${{ secrets.AWS_INSTANCE_PRIVATE_KEY }}"
