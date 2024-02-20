@@ -71,5 +71,6 @@ jobs:
           username: ${{ secrets.AWS_INSTANCE_USERNAME }}
           key: ${{ secrets.AWS_INSTANCE_PRIVATE_KEY }}
           script: |
+            tocuh abc.txt
             docker pull ghcr.io/${{ github.repository_owner }}/ramp-frontend:latest
             docker run -d -p 8080:8080 ghcr.io/${{ github.repository_owner }}/ramp-frontend:latest
